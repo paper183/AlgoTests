@@ -14,6 +14,16 @@ public final class Utils {
 		return rArray;
 	}
 	
+	//generates times amount of arrays with random numbers
+	public static int[][] generateArrays(int minLength, int maxLength, int minVal, int maxVal, int times) {
+		int[][] arrays = new int[times][];
+		
+		for (int i = 0; i < times; i++) {
+			arrays[i] = Utils.randomArray(minLength, maxLength, minVal, maxVal);
+		}
+		return arrays;
+	}
+	
 	private Utils() {
 		
 	}

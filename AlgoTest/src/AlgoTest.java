@@ -14,7 +14,7 @@ public class AlgoTest {
 		final int repeat = 1000000;		//number of arrays to sort for the test
 		final boolean debug = false;	//true shows more info in the console
 		
-		int[][] arrays = generateArrays(minLength, maxLength, minVal, maxVal, repeat);
+		int[][] arrays = Utils.generateArrays(minLength, maxLength, minVal, maxVal, repeat);
 		
 		System.out.println("==== Algo One ====");
 		runBench(new AlgoOne(), arrays, debug);
@@ -54,16 +54,6 @@ public class AlgoTest {
 		itTime = itTime/times;
 		System.out.println("Time AVG : " + itTime);
 		System.out.println("Ops AVG : " + itOps);
-	}
-	
-	//generates times amount of arrays with random numbers
-	private static int[][] generateArrays(int minLength, int maxLength, int minVal, int maxVal, int times) {
-		int[][] arrays = new int[times][];
-		
-		for (int i = 0; i < times; i++) {
-			arrays[i] = Utils.randomArray(minLength, maxLength, minVal, maxVal);
-		}
-		return arrays;
 	}
 
 }
