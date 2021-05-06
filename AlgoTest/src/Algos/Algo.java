@@ -1,35 +1,32 @@
 package Algos;
 
+//Superclass for algorithms containing all the necessary methods and variables to test them
 public class Algo {
 	
 	protected int[] arrInt;
-	protected boolean loopState;
+	protected boolean loopState = true;
 	
-	protected boolean isBench;
-	protected int nbOps;
+	protected boolean isBench = false;
+	protected int nbOps = 0;
 	protected long startTime, endTime, duration;
 	
 	public Algo() {
 		this.arrInt = null;
 		loopState = false;
-		isBench = false;
 	}
 	
 	public Algo(int[] arrInt) {
 		this.arrInt = arrInt;
-		loopState = true;
-		isBench = false;
 	}
 	
 	public Algo(int[] arrInt, boolean isBench) {
 		this.arrInt = arrInt;
-		loopState = true;
 		this.isBench = isBench;
 	}
 	
-	public void run() {
-		
-	}
+	//To override in specific algorithm class
+	//Most of the algorithms execution should be done in this method
+	public void run() { }
 	
 	public void startBench() {
 		isBench = true;
@@ -40,9 +37,6 @@ public class Algo {
 	public void endBench() {
 		endTime = System.nanoTime();
 		duration = (endTime - startTime);
-		//System.out.println("Time : " + duration);
-		//System.out.println("Number of operations: " + nbOps);
-		//System.out.println("End : " + Arrays.toString(arrInt));
 	}
 
 	public int[] getArrInt() {

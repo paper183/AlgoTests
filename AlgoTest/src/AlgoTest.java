@@ -1,33 +1,32 @@
 import java.util.Arrays;
-import java.util.concurrent.ThreadLocalRandom;
-
 import Algos.Algo;
 import Algos.AlgoOne;
 import Algos.AlgoTwo;
 import Algos.Utils;
 
 public class AlgoTest {
-	
-
 
 	public static void main(String[] args) {
-		final int minLength = 20;
-		final int maxLength = 40;
-		final int minVal = 1;
-		final int maxVal = 1000;
-		final int repeat = 10000000;
-		final boolean debug = false;
+		final int minLength = 20; 		//minimum length of the arrays to sort
+		final int maxLength = 40; 		//maximum length of the arrays to sort
+		final int minVal = 1;			//min value of numbers in the arrays
+		final int maxVal = 1000;		//max value of numbers in the array
+		final int repeat = 1000000;		//number of arrays to sort for the test
+		final boolean debug = false;	//true shows more info in the console
 		
 		int[][] arrays = generateArrays(minLength, maxLength, minVal, maxVal, repeat);
 		
 		System.out.println("==== Algo One ====");
-		runBench(new AlgoOne(null, true), arrays, debug);
+		runBench(new AlgoOne(), arrays, debug);
 		
 		System.out.println("==== Algo Two ====");
-		runBench(new AlgoTwo(null, true), arrays, debug);
+		runBench(new AlgoTwo(), arrays, debug);
 		
 	}
 	
+	//Run test on Algo object using run() method for all the arrays in second argument
+	//Starts bench variables of the object to get number of operations and time in nanoseconds
+	//if debug is true it shows initial array and result array
 	private static void runBench(Algo algo, int[][] arrays, boolean debug) {
 		long itTime = 0;
 		long itOps = 0;
@@ -57,6 +56,7 @@ public class AlgoTest {
 		System.out.println("Ops AVG : " + itOps);
 	}
 	
+	//generates times amount of arrays with random numbers
 	private static int[][] generateArrays(int minLength, int maxLength, int minVal, int maxVal, int times) {
 		int[][] arrays = new int[times][];
 		
