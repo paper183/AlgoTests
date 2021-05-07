@@ -26,7 +26,9 @@ public class Algo {
 	
 	//To override in specific algorithm class
 	//Most of the algorithms execution should be done in this method
-	public void run() { }
+	public void run() {
+		
+	}
 	
 	public void startBench() {
 		isBench = true;

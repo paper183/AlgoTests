@@ -19,8 +19,6 @@ public class AlgoOne extends Algo {
 	@Override
 	public void run() {
 		
-		//System.out.println("Start 1 : " + Arrays.toString(arrInt));
-		
 		while (loopState) {
 			loopState = false;
 			for (int i = 0; i < arrInt.length - nbLoops; i++) {
@@ -30,12 +28,11 @@ public class AlgoOne extends Algo {
 					arrInt[i + 1] = temp;
 					loopState = true;
 				}
-				//System.out.println("For " + i + " : " + Arrays.toString(arrInt));
 				if (isBench) nbOps++;
 			}
 			nbLoops++;
 		}
-		//System.out.println("Number of operations 1 : " + nbOps);
+
 	}
 	
 	@Override

@@ -17,8 +17,6 @@ public class AlgoTwo extends Algo {
 	@Override
 	public void run() {
 		
-		//System.out.println("Start 1 : " + Arrays.toString(arrInt));
-		
 		while (loopState) {
 			loopState = false;
 			for (int i = 0, j = arrInt.length - 1; i < j; i++, j--) {
@@ -28,7 +26,6 @@ public class AlgoTwo extends Algo {
 					arrInt[j] = temp;
 					loopState = true;
 				}
-				//System.out.println("For " + i + " : " + Arrays.toString(arrInt));
 				if (isBench) nbOps++;
 			}
 		}
